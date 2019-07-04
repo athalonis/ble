@@ -1560,3 +1560,267 @@ type LERemoteConnectionParameterRequestNegativeReplyRP struct {
 func (c *LERemoteConnectionParameterRequestNegativeReplyRP) Unmarshal(b []byte) error {
 	return unmarshal(c, b)
 }
+
+// APCFEnable implements APCF Enable (0x00|0x0157) [https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command]
+type APCFEnable struct {
+	APCFenable uint8
+}
+
+func (c *APCFEnable) String() string {
+	return "APCF Enable (0x00|0x0157)"
+}
+
+// OpCode returns the opcode of the command.
+func (c *APCFEnable) OpCode() int { return 0x00<<10 | 0x0157 }
+
+// Len returns the length of the command.
+func (c *APCFEnable) Len() int { return 1 }
+
+// Marshal serializes the command parameters into binary form.
+func (c *APCFEnable) Marshal(b []byte) error {
+	return marshal(c, b)
+}
+
+// APCFEnableRP returns the return parameter of APCF Enable
+type APCFEnableRP struct {
+	Status uint8
+}
+
+// Unmarshal de-serializes the binary data and stores the result in the receiver.
+func (c *APCFEnableRP) Unmarshal(b []byte) error {
+	return unmarshal(c, b)
+}
+
+// APCFSetFilteringParameters implements APCF Set Filtering Parameters (0x01|0x0157) [https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command]
+type APCFSetFilteringParameters struct {
+	Action               uint8
+	FilterIndex          uint8
+	FeatureSelection     uint16
+	ListLogicType        uint16
+	FilterLogicType      uint8
+	RSSIHighThreshold    uint8
+	DeliveryMode         uint8
+	OnfoundTimeout       uint16
+	OnfoundTimeoutCount  uint8
+	RSSILowThresh        uint8
+	OnlostTimeout        uint16
+	Numoftrackingentries uint16
+}
+
+func (c *APCFSetFilteringParameters) String() string {
+	return "APCF Set Filtering Parameters (0x01|0x0157)"
+}
+
+// OpCode returns the opcode of the command.
+func (c *APCFSetFilteringParameters) OpCode() int { return 0x01<<10 | 0x0157 }
+
+// Len returns the length of the command.
+func (c *APCFSetFilteringParameters) Len() int { return 17 }
+
+// Marshal serializes the command parameters into binary form.
+func (c *APCFSetFilteringParameters) Marshal(b []byte) error {
+	return marshal(c, b)
+}
+
+// APCFSetFilteringParametersRP returns the return parameter of APCF Set Filtering Parameters
+type APCFSetFilteringParametersRP struct {
+	Status          uint8
+	Opcode          uint8
+	Action          uint8
+	AvailableSpaces uint8
+}
+
+// Unmarshal de-serializes the binary data and stores the result in the receiver.
+func (c *APCFSetFilteringParametersRP) Unmarshal(b []byte) error {
+	return unmarshal(c, b)
+}
+
+// APCFBroadcastAddress implements APCF Broadcast Address (0x02|0x0157) [https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command]
+type APCFBroadcastAddress struct {
+	Action                 uint8
+	FilterIndex            uint8
+	BroadcasterAddress     [6]byte
+	ApplicationAddressType uint8
+}
+
+func (c *APCFBroadcastAddress) String() string {
+	return "APCF Broadcast Address (0x02|0x0157)"
+}
+
+// OpCode returns the opcode of the command.
+func (c *APCFBroadcastAddress) OpCode() int { return 0x02<<10 | 0x0157 }
+
+// Len returns the length of the command.
+func (c *APCFBroadcastAddress) Len() int { return 9 }
+
+// Marshal serializes the command parameters into binary form.
+func (c *APCFBroadcastAddress) Marshal(b []byte) error {
+	return marshal(c, b)
+}
+
+// APCFBroadcastAddressRP returns the return parameter of APCF Broadcast Address
+type APCFBroadcastAddressRP struct {
+	Status          uint8
+	Opcode          uint8
+	Action          uint8
+	AvailableSpaces uint8
+}
+
+// Unmarshal de-serializes the binary data and stores the result in the receiver.
+func (c *APCFBroadcastAddressRP) Unmarshal(b []byte) error {
+	return unmarshal(c, b)
+}
+
+// APCFServiceUUID implements APCF Service UUID (0x03|0x0157) [https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command]
+type APCFServiceUUID struct {
+	Action      uint8
+	FilterIndex uint8
+	UUID        []uint16
+	UUIDMask    []uint16
+}
+
+func (c *APCFServiceUUID) String() string {
+	return "APCF Service UUID (0x03|0x0157)"
+}
+
+// OpCode returns the opcode of the command.
+func (c *APCFServiceUUID) OpCode() int { return 0x03<<10 | 0x0157 }
+
+// Len returns the length of the command.
+func (c *APCFServiceUUID) Len() int { return -1 }
+
+// APCFServiceUUIDRP returns the return parameter of APCF Service UUID
+type APCFServiceUUIDRP struct {
+	Status          uint8
+	Opcode          uint8
+	Action          uint8
+	AvailableSpaces uint8
+}
+
+// Unmarshal de-serializes the binary data and stores the result in the receiver.
+func (c *APCFServiceUUIDRP) Unmarshal(b []byte) error {
+	return unmarshal(c, b)
+}
+
+// APCFSolicitationUUID implements APCF Solicitation UUID (0x04|0x0157) [https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command]
+type APCFSolicitationUUID struct {
+	Action      uint8
+	FilterIndex uint8
+	UUID        []uint16
+	UUIDMask    []uint16
+}
+
+func (c *APCFSolicitationUUID) String() string {
+	return "APCF Solicitation UUID (0x04|0x0157)"
+}
+
+// OpCode returns the opcode of the command.
+func (c *APCFSolicitationUUID) OpCode() int { return 0x04<<10 | 0x0157 }
+
+// Len returns the length of the command.
+func (c *APCFSolicitationUUID) Len() int { return -1 }
+
+// APCFSolicitationUUIDRP returns the return parameter of APCF Solicitation UUID
+type APCFSolicitationUUIDRP struct {
+	Status          uint8
+	Opcode          uint8
+	Action          uint8
+	AvailableSpaces uint8
+}
+
+// Unmarshal de-serializes the binary data and stores the result in the receiver.
+func (c *APCFSolicitationUUIDRP) Unmarshal(b []byte) error {
+	return unmarshal(c, b)
+}
+
+// APCFLocalName implements APCF Local Name (0x06|0x0157) [https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command]
+type APCFLocalName struct {
+	Action                  uint8
+	FilterIndex             uint8
+	LocNameMandataorSerData []byte
+}
+
+func (c *APCFLocalName) String() string {
+	return "APCF Local Name (0x06|0x0157)"
+}
+
+// OpCode returns the opcode of the command.
+func (c *APCFLocalName) OpCode() int { return 0x06<<10 | 0x0157 }
+
+// Len returns the length of the command.
+func (c *APCFLocalName) Len() int { return -1 }
+
+// APCFLocalNameRP returns the return parameter of APCF Local Name
+type APCFLocalNameRP struct {
+	Status          uint8
+	Opcode          uint8
+	Action          uint8
+	AvailableSpaces uint8
+}
+
+// Unmarshal de-serializes the binary data and stores the result in the receiver.
+func (c *APCFLocalNameRP) Unmarshal(b []byte) error {
+	return unmarshal(c, b)
+}
+
+// APCFManufacturerData implements APCF Manufacturer Data (0x06|0x0157) [https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command]
+type APCFManufacturerData struct {
+	Action                  uint8
+	FilterIndex             uint8
+	LocNameMandataorSetData []byte
+	ManDataMask             []byte
+}
+
+func (c *APCFManufacturerData) String() string {
+	return "APCF Manufacturer Data (0x06|0x0157)"
+}
+
+// OpCode returns the opcode of the command.
+func (c *APCFManufacturerData) OpCode() int { return 0x06<<10 | 0x0157 }
+
+// Len returns the length of the command.
+func (c *APCFManufacturerData) Len() int { return -1 }
+
+// APCFManufacturerDataRP returns the return parameter of APCF Manufacturer Data
+type APCFManufacturerDataRP struct {
+	Status          uint8
+	Opcode          uint8
+	Action          uint8
+	AvailableSpaces uint8
+}
+
+// Unmarshal de-serializes the binary data and stores the result in the receiver.
+func (c *APCFManufacturerDataRP) Unmarshal(b []byte) error {
+	return unmarshal(c, b)
+}
+
+// APCFServiceData implements APCF Service Data (0x07|0x0157) [https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command]
+type APCFServiceData struct {
+	Action                      uint8
+	FilterIndex                 uint8
+	LocNameMandataorSerData     []byte
+	LocNameMandataorSerDataMask []byte
+}
+
+func (c *APCFServiceData) String() string {
+	return "APCF Service Data (0x07|0x0157)"
+}
+
+// OpCode returns the opcode of the command.
+func (c *APCFServiceData) OpCode() int { return 0x07<<10 | 0x0157 }
+
+// Len returns the length of the command.
+func (c *APCFServiceData) Len() int { return -1 }
+
+// APCFServiceDataRP returns the return parameter of APCF Service Data
+type APCFServiceDataRP struct {
+	Status          uint8
+	Opcode          uint8
+	Action          uint8
+	AvailableSpaces uint8
+}
+
+// Unmarshal de-serializes the binary data and stores the result in the receiver.
+func (c *APCFServiceDataRP) Unmarshal(b []byte) error {
+	return unmarshal(c, b)
+}
