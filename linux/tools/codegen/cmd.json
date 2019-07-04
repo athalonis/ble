@@ -1557,8 +1557,6 @@
                         "Events": [
                                 "Command Status"
                         ]
-                },
-
-        ],
-
+                }
+        ]
 }
