@@ -1243,10 +1243,10 @@
                         ]
                 }
         ],
-        "AdvertisingPacketContentFilter": [
+        "LEApcf": [
                 {
                         "Name": "APCF Enable",
-                        "Spec": "Vol ?",
+                        "Spec": "https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command",
                         "OGF": "0x00",
                         "OCF": "0x0157",
                         "Len": 1,
@@ -1266,7 +1266,7 @@
                 },
                 {
                         "Name": "APCF Set Filtering Parameters",
-                        "Spec": "Vol ?",
+                        "Spec": "https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command",
                         "OGF": "0x01",
                         "OCF": "0x0157",
                         "Len": 17,
@@ -1330,7 +1330,7 @@
                 },
                 {
                         "Name": "APCF Broadcast Address",
-                        "Spec": "Vol ?",
+                        "Spec": "https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command",
                         "OGF": "0x02",
                         "OCF": "0x0157",
                         "Len": 9,
@@ -1369,7 +1369,7 @@
                 },
                 {
                         "Name": "APCF Service UUID",
-                        "Spec": "Vol ?",
+                        "Spec": "https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command",
                         "OGF": "0x03",
                         "OCF": "0x0157",
                         "Len": -1,
@@ -1408,7 +1408,7 @@
 
                 {
                         "Name": "APCF Solicitation UUID",
-                        "Spec": "Vol ?",
+                        "Spec": "https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command",
                         "OGF": "0x04",
                         "OCF": "0x0157",
                         "Len": -1,
@@ -1447,7 +1447,7 @@
 
                 {
                         "Name": "APCF Local Name",
-                        "Spec": "Vol ?",
+                        "Spec": "https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command",
                         "OGF": "0x06",
                         "OCF": "0x0157",
                         "Len": -1,
@@ -1483,7 +1483,7 @@
 
                 {
                         "Name": "APCF Manufacturer Data",
-                        "Spec": "Vol ?",
+                        "Spec": "https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command",
                         "OGF": "0x06",
                         "OCF": "0x0157",
                         "Len": -1,
@@ -1522,7 +1522,7 @@
 
                 {
                         "Name": "APCF Service Data",
-                        "Spec": "Vol ?",
+                        "Spec": "https://source.android.com/devices/bluetooth/hci_requirements#le_apcf_command",
                         "OGF": "0x07",
                         "OCF": "0x0157",
                         "Len": -1,

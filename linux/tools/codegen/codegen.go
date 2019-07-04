@@ -164,6 +164,7 @@ type commands struct {
 	InfoParam   []cmd
 	StatusParam []cmd
 	LEControl   []cmd
+	LEApcf      []cmd
 }
 
 func genCmd(b []byte, w io.Writer, t *template.Template) {
@@ -186,6 +187,7 @@ func genCmd(b []byte, w io.Writer, t *template.Template) {
 	gen(t, w, cmds.InfoParam)
 	gen(t, w, cmds.StatusParam)
 	gen(t, w, cmds.LEControl)
+	gen(t, w, cmds.LEApcf)
 }
 
 type evt struct {
