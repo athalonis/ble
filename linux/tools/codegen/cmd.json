@@ -1242,5 +1242,323 @@
                                 "Command Complete"
                         ]
                 }
-        ]
+        ],
+        "AdvertisingPacketContentFilter": [
+                {
+                        "Name": "APCF Enable",
+                        "Spec": "Vol ?",
+                        "OGF": "0x00",
+                        "OCF": "0x0157",
+                        "Len": 1,
+                        "Param": [
+                                {
+                                        "APCF enable": "uint8"
+                                }
+                        ],
+                        "Return": [
+                            {
+                                "Status": "uint8"
+                            }
+                        ],
+                        "Events": [
+                                "Command Status"
+                        ]
+                },
+                {
+                        "Name": "APCF Set Filtering Parameters",
+                        "Spec": "Vol ?",
+                        "OGF": "0x01",
+                        "OCF": "0x0157",
+                        "Len": 17,
+                        "Param": [
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "Filter Index": "uint8"
+                                },
+                                {
+                                        "Feature Selection": "uint16"
+                                },
+                                {
+                                        "List Logic Type": "uint16"
+                                },
+                                {
+                                        "Filter Logic Type": "uint8"
+                                },
+                                {
+                                        "RSSI High Threshold": "uint8"
+                                },
+                                {
+                                        "Delivery Mode": "uint8"
+                                },
+                                {
+                                        "Onfound Timeout": "uint16"
+                                },
+                                {
+                                        "Onfound Timeout Count": "uint8"
+                                },
+                                {
+                                        "RSSI Low Thresh": "uint8"
+                                },
+                                {
+                                        "Onlost Timeout": "uint16"
+                                },
+                                {
+                                        "Num of tracking entries": "uint16"
+                                }
+
+                        ],
+                        "Return": [
+                                {
+                                        "Status": "uint8"
+                                },
+                                {
+                                        "Opcode": "uint8"
+                                },
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "AvailableSpaces": "uint8"
+                                }
+                        ],
+                        "Events": [
+                                "Command Status",
+                                "Read Remote Version Information Complete"
+                        ]
+                },
+                {
+                        "Name": "APCF Broadcast Address",
+                        "Spec": "Vol ?",
+                        "OGF": "0x02",
+                        "OCF": "0x0157",
+                        "Len": 9,
+                        "Param": [
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "Filter Index": "uint8"
+                                },
+                                {
+                                        "Broadcaster Address": "[6]byte"
+                                },
+                                {
+                                        "Application Address Type": "uint8"
+                                }
+
+                        ],
+                        "Return": [
+                                {
+                                        "Status": "uint8"
+                                },
+                                {
+                                        "Opcode": "uint8"
+                                },
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "AvailableSpaces": "uint8"
+                                }
+                        ],
+                        "Events": [
+                                "Command Status"
+                        ]
+                },
+                {
+                        "Name": "APCF Service UUID",
+                        "Spec": "Vol ?",
+                        "OGF": "0x03",
+                        "OCF": "0x0157",
+                        "Len": -1,
+                        "Param": [
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "Filter Index": "uint8"
+                                },
+                                {
+                                        "UUID": "[]uint16"
+                                },
+                                {
+                                        "UUID Mask": "[]uint16"
+                                }
+                        ],
+                        "Return": [
+                                {
+                                        "Status": "uint8"
+                                },
+                                {
+                                        "Opcode": "uint8"
+                                },
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "AvailableSpaces": "uint8"
+                                }
+                        ],
+                        "Events": [
+                                "Command Status"
+                        ]
+                },
+
+                {
+                        "Name": "APCF Solicitation UUID",
+                        "Spec": "Vol ?",
+                        "OGF": "0x04",
+                        "OCF": "0x0157",
+                        "Len": -1,
+                        "Param": [
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "Filter Index": "uint8"
+                                },
+                                {
+                                        "UUID": "[]uint16"
+                                },
+                                {
+                                        "UUID Mask": "[]uint16"
+                                }
+                        ],
+                        "Return": [
+                                {
+                                        "Status": "uint8"
+                                },
+                                {
+                                        "Opcode": "uint8"
+                                },
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "AvailableSpaces": "uint8"
+                                }
+                        ],
+                        "Events": [
+                                "Command Status"
+                        ]
+                },
+
+                {
+                        "Name": "APCF Local Name",
+                        "Spec": "Vol ?",
+                        "OGF": "0x06",
+                        "OCF": "0x0157",
+                        "Len": -1,
+                        "Param": [
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "Filter Index": "uint8"
+                                },
+                                {
+                                        "LocName Mandata or SerData": "[]byte"
+                                }
+                        ],
+                        "Return": [
+                                {
+                                        "Status": "uint8"
+                                },
+                                {
+                                        "Opcode": "uint8"
+                                },
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "AvailableSpaces": "uint8"
+                                }
+                        ],
+                        "Events": [
+                                "Command Status"
+                        ]
+                },
+
+                {
+                        "Name": "APCF Manufacturer Data",
+                        "Spec": "Vol ?",
+                        "OGF": "0x06",
+                        "OCF": "0x0157",
+                        "Len": -1,
+                        "Param": [
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "Filter Index": "uint8"
+                                },
+                                {
+                                        "LocName Mandata or SetData": "[]byte"
+                                },
+                                {
+                                        "ManData Mask": "[]byte"
+                                }
+                        ],
+                        "Return": [
+                                {
+                                        "Status": "uint8"
+                                },
+                                {
+                                        "Opcode": "uint8"
+                                },
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "AvailableSpaces": "uint8"
+                                }
+                        ],
+                        "Events": [
+                                "Command Status"
+                        ]
+                },
+
+                {
+                        "Name": "APCF Service Data",
+                        "Spec": "Vol ?",
+                        "OGF": "0x07",
+                        "OCF": "0x0157",
+                        "Len": -1,
+                        "Param": [
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "Filter Index": "uint8"
+                                },
+                                {
+                                        "LocName Mandata or SerData": "[]byte"
+                                },
+                                {
+                                        "LocName Mandata or SerData Mask": "[]byte"
+                                }
+                        ],
+                        "Return": [
+                                {
+                                        "Status": "uint8"
+                                },
+                                {
+                                        "Opcode": "uint8"
+                                },
+                                {
+                                        "Action": "uint8"
+                                },
+                                {
+                                        "AvailableSpaces": "uint8"
+                                }
+                        ],
+                        "Events": [
+                                "Command Status"
+                        ]
+                },
+
+        ],
+
 }
